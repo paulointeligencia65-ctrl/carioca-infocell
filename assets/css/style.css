@@ -80,7 +80,8 @@ p{margin:0 0 1em}
 .card .foto{background:radial-gradient(120% 90% at 50% 30%,#fff 0%,#f4f7fc 62%,#e9eef7 100%);border:1px solid var(--linha);border-radius:var(--r-lg)}
 .card .foto img{padding:14px;object-fit:contain}
 /* ambiente (hero, serviço): a foto preenche a moldura — sem faixa desfocada */
-.hero-card .foto img{object-fit:cover;object-position:center 46%;padding:0}
+/* hero: moldura 9:16 igual à foto original -> aparece inteira, sem corte e sem faixa */
+.hero-card .foto img{object-fit:cover;object-position:center;padding:0}
 .two .foto img{object-fit:cover;object-position:center;padding:0}
 /* galeria de ambiente: preenche o quadro (foto de ambiente tolera recorte) */
 .grade > .foto img{object-fit:cover;padding:0}
@@ -190,13 +191,13 @@ nav.menu a.ativo{background:var(--azul);color:#fff;box-shadow:0 6px 16px rgba(13
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
 .hero-selos{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.82rem;color:var(--txt-2);font-weight:600}
 .hero-selos span{display:inline-flex;align-items:center;gap:6px}
-.hero-card{position:relative}
+.hero-card{position:relative;width:100%;max-width:500px;margin-left:auto}
 .hero-card .nota{
   position:absolute;top:16px;left:16px;z-index:5;background:rgba(255,255,255,.94);
   backdrop-filter:blur(8px);color:var(--azul);font-weight:800;font-size:.74rem;
   padding:7px 13px;border-radius:999px;box-shadow:var(--sh-2);letter-spacing:.02em
 }
-.hero-card .foto{border-radius:var(--r-xl);aspect-ratio:4/5;box-shadow:var(--sh-3)}
+.hero-card .foto{border-radius:var(--r-xl);aspect-ratio:5/4;box-shadow:var(--sh-3)}
 .hero-card .local{
   display:block;margin-top:12px;font-size:.8rem;color:var(--txt-2);font-weight:600;text-align:center
 }
@@ -482,7 +483,7 @@ footer.site p{font-size:.88rem}
 @media(max-width:980px){
   .hero .wrap,.detalhe,.two,.carrinho-grid{grid-template-columns:1fr}
   .hero{padding:48px 0 56px}
-  .hero-card{max-width:440px;margin:0 auto;width:100%}
+  .hero-card{max-width:360px;margin:0 auto;width:100%}
   .g4,.g3{grid-template-columns:repeat(2,1fr)}
   .faixa .wrap{grid-template-columns:repeat(2,1fr)}
   footer.site .cols{grid-template-columns:1fr 1fr}
