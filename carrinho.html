@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carrinho e pedido — Carioca InfoCell</title>
+<meta name="description" content="Finalize seu pedido na Carioca InfoCell e envie pelo WhatsApp.">
+<meta name="theme-color" content="#0d3b8f">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body data-page="carrinho">
+<div id="topo"></div>
+
+<section>
+  <div class="wrap">
+    <h1 style="font-size:clamp(1.7rem,2.6vw,2.2rem)">Seu carrinho</h1>
+    <p style="color:var(--txt-2);margin-top:-6px">Confira os itens, preencha seus dados e envie o pedido direto para o nosso WhatsApp.</p>
+    <div class="carrinho-grid" style="margin-top:24px">
+      <div>
+        <div id="carrinhoPalco"></div>
+      </div>
+      <div id="ladoCheckout">
+        <div class="resumo">
+          <h3 style="margin-top:0">Resumo do pedido</h3>
+          <div class="linha"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+          <div class="linha"><span>Entrega</span><span>Combinada no WhatsApp</span></div>
+          <div class="total"><span>Total</span><span id="total">R$ 0,00</span></div>
+          <p class="aviso" id="obsSemPreco" style="display:none;margin-top:12px">
+            Há itens <b>sob consulta</b> no carrinho: o valor deles é informado no WhatsApp.
+          </p>
+
+          <div style="border-top:1px solid var(--linha);margin-top:16px;padding-top:16px">
+            <h3 style="margin:0 0 12px;font-size:1rem">Seus dados</h3>
+            <div class="campo"><label for="nome">Nome completo *</label><input id="nome" autocomplete="name" placeholder="Como devemos te chamar?"></div>
+            <div class="campo"><label for="fone">WhatsApp / telefone *</label><input id="fone" inputmode="tel" autocomplete="tel" placeholder="(85) 9 0000-0000"></div>
+            <div class="campo"><label for="entrega">Como quer receber?</label>
+              <select id="entrega">
+                <option>Retirar na loja (Icaraí, Caucaia)</option>
+                <option>Entrega em Caucaia — combinar no WhatsApp</option>
+                <option>Entrega em outra cidade — combinar frete</option>
+              </select>
+            </div>
+            <div class="campo"><label for="pagamento">Forma de pagamento</label>
+              <select id="pagamento">
+                <option>Pix</option>
+                <option>Dinheiro</option>
+                <option>Cartão de débito</option>
+                <option>Cartão de crédito (parcelado)</option>
+                <option>A combinar</option>
+              </select>
+            </div>
+            <div class="campo"><label for="obs">Observação (opcional)</label><textarea id="obs" rows="2" placeholder="Ex.: preciso de película para o mesmo aparelho"></textarea></div>
+          </div>
+
+          <button class="btn btn-zap" id="enviar" style="width:100%;justify-content:center;margin-top:6px">💬 Enviar pedido no WhatsApp</button>
+          <p style="font-size:.78rem;color:var(--txt-2);margin:10px 0 0">
+            Ao enviar, abrimos o WhatsApp com o resumo do pedido pronto. Nada é cobrado automaticamente —
+            a confirmação de estoque e valor final é feita no atendimento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="rodape"></div>
+<div id="toast" class="toast"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/catalogo.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

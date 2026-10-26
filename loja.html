@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loja — Carioca InfoCell | Celulares, acessórios e informática</title>
+<meta name="description" content="Compre celulares, capinhas, carregadores, fones, notebooks e material de papelaria na Carioca InfoCell, Icaraí — Caucaia/CE.">
+<meta name="theme-color" content="#0d3b8f">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body data-page="loja">
+<div id="topo"></div>
+
+<section style="padding:46px 0 0">
+  <div class="wrap">
+    <span class="kicker-claro">Catálogo completo</span>
+    <h1 style="font-size:clamp(1.7rem,2.6vw,2.2rem)">Loja</h1>
+    <p style="color:var(--txt-2);margin-top:-6px">Escolha os produtos, adicione ao carrinho e finalize pelo WhatsApp. Simples assim.</p>
+    <div class="filtros">
+      <input type="search" id="busca" placeholder="🔍 Buscar produto (ex.: capinha, notebook, fone...)" aria-label="Buscar produto">
+      <select id="ordem" aria-label="Ordenar">
+        <option value="relevancia">Ordenar: destaques</option>
+        <option value="menor">Menor preço</option>
+        <option value="maior">Maior preço</option>
+        <option value="nome">Nome (A–Z)</option>
+      </select>
+    </div>
+    <div class="chips" id="chips"></div>
+    <p style="color:#5b6472;font-size:.86rem;margin-top:14px" id="contador"></p>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <div class="grade g4" id="lista"></div>
+    <div class="aviso" style="margin-top:34px">
+      <b>Preços e estoque:</b> os valores podem mudar sem aviso e o estoque gira rápido.
+      Itens marcados como <b>“sob consulta”</b> são cotados pelo WhatsApp —
+      responda rápido por lá que a gente reserva para você.
+    </div>
+  </div>
+</section>
+
+<div id="rodape"></div>
+<div id="toast" class="toast"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/catalogo.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Produto — Carioca InfoCell</title>
+<meta name="description" content="Detalhes do produto, preço e formas de pagamento na Carioca InfoCell, Icaraí — Caucaia/CE.">
+<meta name="theme-color" content="#0d3b8f">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body data-page="produto">
+<div id="topo"></div>
+
+<section>
+  <div class="wrap" id="palco"></div>
+</section>
+
+<section class="alt" id="semelhantes-sec" hidden>
+  <div class="wrap">
+    <div class="titulo"><span>Veja também</span><h2>Quem viu este produto também levou</h2></div>
+    <div class="grade g4" id="semelhantes"></div>
+  </div>
+</section>
+
+<div id="rodape"></div>
+<div id="toast" class="toast"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/catalogo.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var m = /[?&]id=([^&]+)/.exec(location.search);
+    var p = m ? PRODUTOS.filter(function (x) { return x.id === m[1]; })[0] : null;
+    if (!p) return;
+    var outros = PRODUTOS.filter(function (x) { return x.cat === p.cat && x.id !== p.id; }).slice(0, 4);
+    if (!outros.length) outros = PRODUTOS.filter(function (x) { return x.destaque && x.id !== p.id; }).slice(0, 4);
+    if (outros.length) {
+      document.getElementById("semelhantes-sec").hidden = false;
+      document.getElementById("semelhantes").innerHTML = outros.map(function (x) {
+        return "<article class=\"card\"><a class=\"foto\" href=\"produto.html?id=" + x.id + "\">" +
+          "<span class=\"foto-bg\" style=\"background-image:url(&quot;" + x.img + "&quot;)\" aria-hidden=\"true\"></span>" +
+          "<img src=\"" + x.img + "\" alt=\"" + x.nome + "\" loading=\"lazy\"></a>" +
+          "<div class=\"corpo\"><span class=\"cat\">" + x.nome.slice(0, 22) + "</span>" +
+          "<h3><a href=\"produto.html?id=" + x.id + "\" style=\"color:inherit\">" + x.nome + "</a></h3>" +
+          "<div class=\"preco\">" + (x.preco ? x.preco.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) : "<span class='consultar'>Sob consulta</span>") + "</div>" +
+          "<div class=\"acoes\"><button class=\"btn btn-azul\" onclick=\"window.ADD('" + x.id + "')\">Adicionar</button></div>" +
+          "</div></article>";
+      }).join("");
+    }
+  });
+</script>
+</body>
+</html>
